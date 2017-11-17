@@ -7,20 +7,11 @@ import { environment } from '../environments/environment';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.sass']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'app';
-  constructor(private http:HttpClient, private authTokenService:Angular2TokenService){
-    this.authTokenService.init(environment.token_auth_config);
-    this.authTokenService.signIn({email: 'test1@test1.com', password: '12341234'}).subscribe( 
-      (res) => {
-        alert('response body: ' + JSON.stringify(res.json()) );
-        alert('token: ' + res.headers.toJSON()['access-token'][0]);
-      },
-      (err) => {
-        alert(err);
-      }
-    );
+  title = 'Chat Application';
+  constructor(private http:HttpClient, private a2tService:Angular2TokenService){
+    this.a2tService.init(environment.token_auth_config);
   }
 }

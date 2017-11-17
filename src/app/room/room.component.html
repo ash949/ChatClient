@@ -1,0 +1,30 @@
+<section class='container flex-item-stretch-base flex-container flex-column'>
+  <!-- <header>
+    <h1>
+      Room <strong>{{room.name}}</strong>
+    </h1>
+  </header> -->
+  <div class='row flex-item-stretch-base flex-container'>
+    <ul class='col-md-4 flex-item-stretch-base'>
+      <li *ngFor="let user of room.users">
+        <p>{{user.nickname}}</p>
+        <p>{{user.email}}</p>
+      </li>
+    </ul>
+    <div class='col-md-8 flex-item-stretch-base flex-container flex-column'>
+      
+      <div class='messages-container flex-item-stretch-base'>
+      </div>
+
+      <form (ngSubmit)="onSubmit()" [ngFormOptions]="{ updateOn: 'submit' }" class="message-form flex-item-fixed">
+  
+        <div class='form-group'>
+          <textarea name='message' id='message' class='form-control'></textarea>
+        </div>
+  
+        <button type='submit' class='btn btn-primary'>Submit</button>
+      </form>
+
+    </div>
+  </div>
+</section>

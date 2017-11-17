@@ -1,0 +1,41 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.full-height {
+  height: 100%;
+}
+
+.flex-container {
+  display: flex;
+}
+
+.flex-column {
+  flex-flow: column;
+}
+
+flex-row {
+  flex-flow: row;
+}
+
+.flex-item-stretch-base {
+  flex-grow: 1;
+}
+
+.flex-item-stretch-double {
+  flex-grow: 2;
+}
+
+.flex-item-fixed {
+  flex-grow: 0;
+}
+
+router-outlet + *{
+  @extend .flex-item-stretch-base;
+  @extend .flex-container;
+  @extend .flex-column;
+}
