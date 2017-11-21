@@ -6,8 +6,9 @@
 export const environment = {
   production: false,
   token_auth_config: {
-    // apiBase: 'https://chatserverapi.herokuapp.com/'
-    apiBase: 'http://localhost:3000/',
-    apiBaseNameOnly: 'localhost:3000'
+    apiBase: 'https://chatserverapi.herokuapp.com/',
+    apiBaseNameOnly: 'chatserverapi.herokuapp.com'
+    // apiBase: 'http://localhost:3000/',
+    // apiBaseNameOnly: 'localhost:3000'
   }
 };

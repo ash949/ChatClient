@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
-    if (this.a2tService.userSignedIn){
+    if (this.a2tService.userSignedIn()){
       this.router.navigate(['/rooms']);
     }
   }

@@ -45,7 +45,7 @@ export class RoomComponent implements OnInit {
             console.log(authData);
             var identifiers = '?' + 'access-token=' + authData['accessToken'] + '&client=' + authData['client'] + '&uid=' + authData['uid'];
             console.log(identifiers);
-            let consumer = ActionCable.createConsumer('ws://'+ environment.token_auth_config.apiBaseNameOnly + '/cable' + identifiers );
+            let consumer = ActionCable.createConsumer('wss://'+ environment.token_auth_config.apiBaseNameOnly + '/cable' + identifiers );
             this.userSubscription = consumer.subscriptions.create('RoomChannel',
             {
               connected: () => {

@@ -18,7 +18,7 @@ export class SignupComponent implements OnInit {
               private router: Router) { }
 
   ngOnInit() {
-    if (this.a2tService.userSignedIn){
+    if (this.a2tService.userSignedIn()){
       this.router.navigate(['/rooms']);
     }
   }

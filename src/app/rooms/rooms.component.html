@@ -1,12 +1,12 @@
 <section class="container">
   <header>
-      <h1>
-        Rooms Available
-      </h1>
-    </header>
-    <ul>
-      <li *ngFor="let room of rooms">
-        <a [routerLink]="[ '/room', room.id ]">{{room.name}}</a>
-      </li>
-    </ul>
+    <h1>
+      Rooms Available
+    </h1>
+  </header>
+  <ul>
+    <li *ngFor="let room of rooms">
+      <a [routerLink]="[ '/room', room.id ]">{{room.name}}</a>
+    </li>
+  </ul>
 </section>
