@@ -9,6 +9,13 @@
 // }
 .messages-container {
   border: 1px solid #ddd;
+  overflow-y: scroll;
+  padding: 1em;
+  height: 0px;
+
+  p {
+    word-wrap: break-word;
+  }
 }
 
 .container {

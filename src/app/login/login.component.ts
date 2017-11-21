@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Angular2TokenService } from 'angular2-token';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -12,11 +12,16 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 export class LoginComponent implements OnInit {
   email:string = '';
   password:string = '';
-  constructor(private http:HttpClient, private a2tService:Angular2TokenService, private router: Router) {
+  constructor(private http:HttpClient,
+              private a2tService:Angular2TokenService,
+              private router: Router) {
     this.a2tService.init(environment.token_auth_config);
   }
 
   ngOnInit() {
+    if (this.a2tService.userSignedIn){
+      this.router.navigate(['/rooms']);
+    }
   }
 
   onSubmit(){
@@ -29,5 +34,4 @@ export class LoginComponent implements OnInit {
       }
     );
   }
-
 }

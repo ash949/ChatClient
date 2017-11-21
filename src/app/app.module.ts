@@ -13,6 +13,7 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { RoomsComponent } from './rooms/rooms.component';
 import { RoomComponent } from './room/room.component';
+import { AuthService } from './services/auth.service'
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { RoomComponent } from './room/room.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [ Angular2TokenService ],
+  providers: [ Angular2TokenService, AuthService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

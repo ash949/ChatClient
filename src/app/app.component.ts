@@ -1,7 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Angular2TokenService } from 'angular2-token';
 import { environment } from '../environments/environment';
+import { AuthService } from './services/auth.service'
+
+
 
 
 @Component({
@@ -11,7 +14,6 @@ import { environment } from '../environments/environment';
 })
 export class AppComponent {
   title = 'Chat Application';
-  constructor(private http:HttpClient, private a2tService:Angular2TokenService){
-    this.a2tService.init(environment.token_auth_config);
+  constructor(private authService:AuthService, private a2tService:Angular2TokenService){
   }
 }
